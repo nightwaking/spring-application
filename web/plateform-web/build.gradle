@@ -1,0 +1,24 @@
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+
+springBoot {
+    mainClassName = 'com.myproject.Application'
+}
+
+dependencies {
+    compile(
+            project(':web:plateform-web-api'),
+
+            libraries."commons-lang3",
+            libraries."commons-collections4",
+            libraries."modelmapper",
+            libraries."spring-boot-starter-web",
+            libraries."spring-boot-starter-websocket",
+            libraries."spring-boot-starter-data-redis",
+
+            libraries."springfox-swagger",
+            libraries."springfox-swagger-ui",
+            libraries."alex-common-mini",
+            libraries."alex-common-jpa"
+    )
+}
