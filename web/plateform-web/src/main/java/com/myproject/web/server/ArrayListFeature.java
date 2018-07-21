@@ -56,5 +56,8 @@ public class ArrayListFeature {
 //            if (newCapacity - MAX_ARRAY_SIZE > 0)
 //                newCapacity = hugeCapacity(minCapacity);
 //            elementData = Arrays.copyOf(elementData, newCapacity);
+//      }
+
+
     }
 }
