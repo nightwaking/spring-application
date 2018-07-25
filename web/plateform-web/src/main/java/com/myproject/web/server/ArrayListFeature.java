@@ -14,6 +14,7 @@ public class ArrayListFeature {
 
         personList1.add(person1);
         personList1.remove(0);
+        personList1.get(1);
 
         System.out.println("personList1.size() = " + personList1.size());
         System.out.println("personList2.size() = " + personList2.size());

@@ -11,8 +11,13 @@ public class StringReplace {
         str=str.replaceFirst(str2,"X");
         System.out.println(str);
 
-        String modelStringData = "10000011";
-        byte modelHexData = (byte) (Integer.parseInt(modelStringData, 16) & 0xff);
+        byte hexData = (byte) 0x3c & 0xff;
+        String byteData = Integer.toBinaryString(hexData);
+        String stringData =  String.format("%08d", Integer.parseInt(Integer.toBinaryString(hexData)));
+        System.out.println(stringData);
+        String changeData = stringData.substring(0, 3) + "0" + stringData.substring(4, 8);
+        System.out.println("modelHexData:" + changeData);
+        byte modelHexData = (byte) (Integer.parseInt(changeData, 16) & 0xff);
         System.out.println(modelHexData);
     }
 }

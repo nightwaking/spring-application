@@ -1,0 +1,37 @@
+ArrayList的add方法，向指定的位置添加元素。
+public void add (int index, E element) {
+}
+
+基本思路
+(1)检查添加的元素下标是否越界
+(2)判断数组是否需要扩容
+(3)将需要插入位置之后的元素向后复制一位
+(4)为数组下标为index的元素赋值
+(5)将数组长度 + 1
+
+ArrayList的get方法，获取指定下标的元素
+(1)检查数组是否越界
+(2)直接从底层函数中拿到想要的值
+return element(index);
+
+public E get(int index) {
+    rangeCheck(index);
+    return elementData(index);
+}
+
+E elementData(int index) {
+    return (E) elementData[index];
+}
+
+ArrayList的set方法，改变指定下标的元素
+(1)检查数组是否越界
+(2)获取下标位置原来的元素
+(3)为指定下标的元素赋值
+(4)返回原来的元素
+
+public E set(int index, E element) {
+    rangeCheck(index);
+    E oldValue = elementData(index);
+    elementData[index] = element;
+    return oldValue;
+}
