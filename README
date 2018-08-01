@@ -66,3 +66,44 @@ Vector是线程安全的。底层是数组实现的,数组长度不够用时扩�
 （2）队列
     队列也是一种操作受限制的线性表。只能从头部删除元素，从队尾添加元素，进行删除操作的一端称为队头。
 
+LinkedList
+LinkedList是基于双向链表实现的。
+三个成员变量。
+transient int size = 0;
+
+transient Node<E> first;
+
+transient Node<E> last;
+              __________
+            |  LinkedList|
+            |  对象      |
+personList-> ——————
+            | first:null |
+            | last:null  |
+            | size:0     |
+            |  ________  |
+
+Node定义:
+//静态私有变脸，只能够在LinkedList内部访问
+private static class Node <E> {
+    E item;
+    // 持有两个Node引用
+    Node<E> next;
+    Node<E> prev;
+
+    Node(Node<E> prev, E element, Node<E> next){
+        this.item = element;
+        this.next = next;
+        this.prev = prev;
+    }
+}
+
+LinkedList的add方法:
+public boolean add (E e){
+    linkLast(e);
+    return true;
+}
+
+void linkLast(E e){
+    final Node<E> l = last;
+}

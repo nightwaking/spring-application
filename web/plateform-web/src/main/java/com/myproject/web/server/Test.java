@@ -162,6 +162,27 @@ public class Test {
 
         System.out.println(new POperateInfo(OperateContext.getDefault()).getOperateTime().toString());
 
+        String modelStringData = "10000001";
+        String modelData = replaceIndex(2, "0", modelStringData);
+        System.out.println(modelData);
+        byte modelHexData = (byte) (binaryToDesc(modelData) & 0xff);
+        System.out.println(modelHexData);
+    }
+
+    private static  String replaceIndex(int index, String res, String str) {
+        return str.substring(0, index - 1) + res + str.substring(index, str.length());
+    }
+
+    private static int binaryToDesc(String binaryData) {
+        int decData = Integer.parseInt(binaryData.substring(0, 1)) << 7;
+        decData += Integer.parseInt(binaryData.substring(1, 2)) << 6;
+        decData += Integer.parseInt(binaryData.substring(2, 3)) << 5;
+        decData += Integer.parseInt(binaryData.substring(3, 4)) << 4;
+        decData += Integer.parseInt(binaryData.substring(4, 5)) << 3;
+        decData += Integer.parseInt(binaryData.substring(5, 6)) << 2;
+        decData += Integer.parseInt(binaryData.substring(6, 7)) << 1;
+        decData += Integer.parseInt(binaryData.substring(7, 8));
+        return decData;
     }
 
     private static byte[] wrapData(byte[] data) {
