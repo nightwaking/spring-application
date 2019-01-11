@@ -167,6 +167,9 @@ public class Test {
         System.out.println(modelData);
         byte modelHexData = (byte) (binaryToDesc(modelData) & 0xff);
         System.out.println(modelHexData);
+
+        Float maxVoltage = new Float(223 * (100 + 80)) / 100;
+        System.out.println(maxVoltage);
     }
 
     private static  String replaceIndex(int index, String res, String str) {

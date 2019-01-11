@@ -10,6 +10,15 @@ public class ArrayListFeature {
         List<Person> personList1 = new ArrayList<>();
         List<Person> personList2 = new ArrayList<>();
 
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(1);
+        integerList.add(2);
+        integerList.add(3);
+        integerList.add(4);
+        integerList.add(5);
+
+        integerList.stream().filter(l -> l > 3).forEach(System.out::println);
+
         Person person1 = new Person("name");
 
         personList1.add(person1);
