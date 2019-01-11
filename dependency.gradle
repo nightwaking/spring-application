@@ -40,4 +40,5 @@ ext.libraries = [
         // run time
         "mysql-connector-java"           : "mysql:mysql-connector-java:5.1.37",
         "hsqldb"                         : "org.hsqldb:hsqldb:2.3.3",
+        "alipay-sdk-java"               : "com.alipay.sdk:alipay-sdk-java:3.4.49.ALL",
 ]

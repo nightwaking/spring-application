@@ -15,10 +15,22 @@ dependencies {
             libraries."spring-boot-starter-web",
             libraries."spring-boot-starter-websocket",
             libraries."spring-boot-starter-data-redis",
+            libraries."alipay-sdk-java",
 
             libraries."springfox-swagger",
             libraries."springfox-swagger-ui",
             libraries."alex-common-mini",
-            libraries."alex-common-jpa"
+            libraries."alex-common-jpa",
+
+            'org.apache.httpcomponents:httpclient:4.5.3',
+            'org.apache.httpcomponents:httpmime:4.5.3',
+    )
+
+    provided(libraries."lombok")
+
+    runtime(
+            libraries."hsqldb",
+            libraries."mysql-connector-java",
+//            libraries."spring-boot-properties-migrator",
     )
 }

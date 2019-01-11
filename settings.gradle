@@ -9,3 +9,5 @@
 
 rootProject.name = 'my-project'
 include 'web:plateform-web', 'web:plateform-web-api'
+include 'plateform-serve'
+
